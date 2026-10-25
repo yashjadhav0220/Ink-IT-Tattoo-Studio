@@ -13,7 +13,7 @@ A high-performance, dark-aesthetic Single Page Application (SPA) designed and en
 
 ### 1. ⚡ Studio Identity & Hero Section
 * **Official Branding**: Integrated studio logo, location indicators, and verified credibility badges.
-* **Trust Metrics**: Displays 10+ years of artistry, 5,000+ custom tattoos completed, and 100% sterile safety pledge.
+* **Trust Metrics**: Displays 2 years of artistry, 5,000+ custom tattoos completed, and 100% sterile safety pledge.
 * **Direct Google Reviews**: Verified link with direct modal integration to official Google Reviews (4.9 ★).
 
 ### 2. 🎨 Curated Client Portfolio & Lightbox

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Calculator, Sparkles, Check, ArrowRight, ShieldCheck, Flame, Info, HelpCircle } from 'lucide-react'
+import { Calculator, Sparkles, ArrowRight, Info, Flame } from 'lucide-react'
 
 export default function Estimator({ onSelectEstimate }) {
   const [width, setWidth] = useState(3)
@@ -30,21 +30,21 @@ export default function Estimator({ onSelectEstimate }) {
   const painZones = [
     {
       level: 'Mild / Easy',
-      color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
-      dotColor: 'bg-emerald-400',
+      color: 'text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 border-emerald-500/20',
+      dotColor: 'bg-emerald-500 dark:bg-emerald-400',
       areas: 'Forearm, Outer Bicep, Thigh, Shoulder',
       note: 'Best for first-timers. Feels like light scratching.',
     },
     {
       level: 'Moderate',
-      color: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
-      dotColor: 'bg-amber-400',
+      color: 'text-amber-600 dark:text-amber-400 bg-amber-500/10 border-amber-500/20',
+      dotColor: 'bg-amber-500 dark:bg-amber-400',
       areas: 'Inner Bicep, Calf, Wrist, Upper Back',
       note: 'Noticeable vibration and mild pinching sensation.',
     },
     {
       level: 'Spicy / Intense',
-      color: 'text-rose-400 bg-rose-500/10 border-rose-500/20',
+      color: 'text-rose-600 dark:text-rose-400 bg-rose-500/10 border-rose-500/20',
       dotColor: 'bg-rose-500',
       areas: 'Ribs, Spine, Neck, Sternum, Fingers',
       note: 'Higher sensitivity near bones and nerve endings.',
@@ -64,20 +64,20 @@ export default function Estimator({ onSelectEstimate }) {
   }
 
   return (
-    <section id="estimator" className="py-20 bg-zinc-950 border-t border-zinc-900 relative">
+    <section id="estimator" className="py-20 bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-900 relative transition-colors duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-rose-500/20 bg-rose-500/10 text-rose-400 text-xs font-semibold tracking-wide">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-rose-500/20 bg-rose-500/10 text-rose-600 dark:text-rose-400 text-xs font-semibold tracking-wide">
             <Calculator className="w-3.5 h-3.5" />
             <span>Transparent Pricing</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-zinc-900 dark:text-white tracking-tight">
             Tattoo Price Calculator
           </h2>
-          <p className="text-zinc-400 text-sm sm:text-base leading-relaxed">
-            At Ink IT Tattoo Studio, pricing is straightforward: <span className="text-white font-semibold">₹750 per square inch</span>. Adjust the dimensions below to get an instant estimate for your next tattoo.
+          <p className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed">
+            At Ink IT Tattoo Studio, pricing is straightforward: <span className="text-zinc-900 dark:text-white font-semibold">₹750 per square inch</span>. Adjust the dimensions below to get an instant estimate for your next tattoo.
           </p>
         </div>
 
@@ -85,11 +85,11 @@ export default function Estimator({ onSelectEstimate }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-5xl mx-auto">
           
           {/* Controls Panel (Left) */}
-          <div className="lg:col-span-7 bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-8 space-y-7 shadow-xl">
+          <div className="lg:col-span-7 bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 sm:p-8 space-y-7 shadow-lg dark:shadow-xl">
             
             {/* Quick Presets */}
             <div>
-              <label className="text-xs font-semibold uppercase tracking-wider text-zinc-400 block mb-3">
+              <label className="text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 block mb-3">
                 Quick Size Presets:
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
@@ -104,8 +104,8 @@ export default function Estimator({ onSelectEstimate }) {
                       }}
                       className={`p-2.5 rounded-xl text-xs font-semibold text-center transition-all ${
                         isActive
-                          ? 'bg-rose-600 text-white shadow-md shadow-rose-950'
-                          : 'bg-zinc-800/80 text-zinc-300 hover:bg-zinc-800 hover:text-white border border-zinc-700/60'
+                          ? 'bg-rose-600 text-white shadow-md shadow-rose-950/20'
+                          : 'bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:text-black dark:hover:text-white border border-zinc-200 dark:border-zinc-700/60'
                       }`}
                     >
                       {p.label}
@@ -118,8 +118,8 @@ export default function Estimator({ onSelectEstimate }) {
             {/* Width Slider */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold text-zinc-200">Width (Inches)</span>
-                <span className="text-base font-bold text-rose-400 bg-zinc-950 px-3 py-1 rounded-lg border border-zinc-800">
+                <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Width (Inches)</span>
+                <span className="text-base font-bold text-rose-600 dark:text-rose-400 bg-zinc-100 dark:bg-zinc-950 px-3 py-1 rounded-lg border border-zinc-200 dark:border-zinc-800">
                   {width} in
                 </span>
               </div>
@@ -130,9 +130,9 @@ export default function Estimator({ onSelectEstimate }) {
                 step="1"
                 value={width}
                 onChange={(e) => setWidth(Number(e.target.value))}
-                className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-rose-500"
+                className="w-full h-2 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-rose-500"
               />
-              <div className="flex justify-between text-[11px] text-zinc-500">
+              <div className="flex justify-between text-[11px] text-zinc-400 dark:text-zinc-500">
                 <span>1 inch (Tiny)</span>
                 <span>5 inches</span>
                 <span>10 inches (Large)</span>
@@ -142,8 +142,8 @@ export default function Estimator({ onSelectEstimate }) {
             {/* Height Slider */}
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm font-semibold text-zinc-200">Height (Inches)</span>
-                <span className="text-base font-bold text-rose-400 bg-zinc-950 px-3 py-1 rounded-lg border border-zinc-800">
+                <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">Height (Inches)</span>
+                <span className="text-base font-bold text-rose-600 dark:text-rose-400 bg-zinc-100 dark:bg-zinc-950 px-3 py-1 rounded-lg border border-zinc-200 dark:border-zinc-800">
                   {height} in
                 </span>
               </div>
@@ -154,9 +154,9 @@ export default function Estimator({ onSelectEstimate }) {
                 step="1"
                 value={height}
                 onChange={(e) => setHeight(Number(e.target.value))}
-                className="w-full h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-rose-500"
+                className="w-full h-2 bg-zinc-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-rose-500"
               />
-              <div className="flex justify-between text-[11px] text-zinc-500">
+              <div className="flex justify-between text-[11px] text-zinc-400 dark:text-zinc-500">
                 <span>1 inch</span>
                 <span>6 inches</span>
                 <span>12 inches (Full Piece)</span>
@@ -164,10 +164,10 @@ export default function Estimator({ onSelectEstimate }) {
             </div>
 
             {/* Studio Note */}
-            <div className="p-3.5 rounded-xl bg-zinc-950/70 border border-zinc-800/80 flex items-start gap-2.5 text-xs text-zinc-400">
-              <Info className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
+            <div className="p-3.5 rounded-xl bg-zinc-50 dark:bg-zinc-950/70 border border-zinc-200 dark:border-zinc-800/80 flex items-start gap-2.5 text-xs text-zinc-600 dark:text-zinc-400">
+              <Info className="w-4 h-4 text-rose-500 dark:text-rose-400 shrink-0 mt-0.5" />
               <span>
-                Standard rate: <strong className="text-zinc-200">₹750/sq. in</strong>. Includes sterile single-use needle cartridge, premium vegan inks, and post-session aftercare instructions.
+                Standard rate: <strong className="text-zinc-900 dark:text-zinc-200">₹750/sq. in</strong>. Includes sterile single-use needle cartridge, premium vegan inks, and post-session aftercare instructions.
               </span>
             </div>
 
@@ -177,40 +177,40 @@ export default function Estimator({ onSelectEstimate }) {
           <div className="lg:col-span-5 flex flex-col gap-6">
             
             {/* Price Output Card */}
-            <div className="bg-gradient-to-br from-zinc-900 to-zinc-950 border border-rose-500/30 rounded-3xl p-6 sm:p-7 shadow-2xl relative overflow-hidden">
+            <div className="bg-gradient-to-br from-white to-zinc-50 dark:from-zinc-900 dark:to-zinc-950 border border-zinc-200 dark:border-rose-500/30 rounded-3xl p-6 sm:p-7 shadow-lg dark:shadow-2xl relative overflow-hidden">
               <div className="absolute -top-12 -right-12 w-32 h-32 bg-rose-500/10 rounded-full blur-2xl pointer-events-none" />
 
-              <span className="text-xs uppercase font-bold tracking-widest text-zinc-400">Estimated Cost</span>
+              <span className="text-xs uppercase font-bold tracking-widest text-zinc-500 dark:text-zinc-400">Estimated Cost</span>
               
               <div className="mt-2 flex items-baseline gap-2">
-                <span className="text-4xl sm:text-5xl font-black text-white tracking-tight">
+                <span className="text-4xl sm:text-5xl font-black text-zinc-900 dark:text-white tracking-tight">
                   ₹{formattedPrice}
                 </span>
-                <span className="text-xs text-zinc-400">est.*</span>
+                <span className="text-xs text-zinc-500 dark:text-zinc-400">est.*</span>
               </div>
 
               {/* Area Breakdown Pill */}
-              <div className="mt-4 pt-4 border-t border-zinc-800 flex items-center justify-between text-xs text-zinc-300">
+              <div className="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800 flex items-center justify-between text-xs text-zinc-700 dark:text-zinc-300">
                 <div>
                   <span className="text-zinc-500 block">Total Area</span>
-                  <span className="font-semibold text-white">{area} Square Inches</span>
+                  <span className="font-semibold text-zinc-900 dark:text-white">{area} Square Inches</span>
                 </div>
                 <div className="text-right">
                   <span className="text-zinc-500 block">Rate Applied</span>
-                  <span className="font-semibold text-rose-400">₹750 / sq. in</span>
+                  <span className="font-semibold text-rose-600 dark:text-rose-400">₹750 / sq. in</span>
                 </div>
               </div>
 
               {/* Real World Comparison Label */}
-              <div className="mt-4 py-2 px-3 rounded-lg bg-zinc-900/90 border border-zinc-800 text-xs text-zinc-300 flex items-center gap-2">
-                <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <div className="mt-4 py-2 px-3 rounded-lg bg-zinc-100 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 text-xs text-zinc-700 dark:text-zinc-300 flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-amber-500 dark:text-amber-400 shrink-0" />
                 <span>{getSizeComparison(area)}</span>
               </div>
 
               {/* Book CTA */}
               <button
                 onClick={handleBookEstimate}
-                className="w-full mt-6 py-3.5 rounded-xl bg-gradient-to-r from-rose-600 via-rose-500 to-red-600 hover:from-rose-500 hover:to-red-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-rose-950/50 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
+                className="w-full mt-6 py-3.5 rounded-xl bg-gradient-to-r from-rose-600 via-rose-500 to-red-600 hover:from-rose-500 hover:to-red-500 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-lg shadow-rose-950/20 dark:shadow-rose-950/50 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Book For This Estimated Size</span>
                 <ArrowRight className="w-4 h-4" />
@@ -218,12 +218,12 @@ export default function Estimator({ onSelectEstimate }) {
             </div>
 
             {/* Interactive Visual Scale Preview Box */}
-            <div className="bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 text-center space-y-3">
-              <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider block">
+            <div className="bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 rounded-3xl p-6 text-center space-y-3 shadow-md">
+              <span className="text-xs font-semibold text-zinc-500 dark:text-zinc-400 uppercase tracking-wider block">
                 Visual Scale Preview (Relative)
               </span>
               
-              <div className="h-44 flex items-center justify-center bg-zinc-950 rounded-2xl border border-zinc-800/80 p-4 overflow-hidden relative">
+              <div className="h-44 flex items-center justify-center bg-zinc-100 dark:bg-zinc-950 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 p-4 overflow-hidden relative">
                 {/* Scaled Preview Rectangle */}
                 <div
                   style={{
@@ -232,10 +232,10 @@ export default function Estimator({ onSelectEstimate }) {
                   }}
                   className="rounded-xl border-2 border-dashed border-rose-500 bg-rose-500/10 flex flex-col items-center justify-center p-2 transition-all duration-300 shadow-inner"
                 >
-                  <span className="text-xs font-bold text-white">
+                  <span className="text-xs font-bold text-zinc-900 dark:text-white">
                     {width}" × {height}"
                   </span>
-                  <span className="text-[10px] text-rose-300 font-mono">
+                  <span className="text-[10px] text-rose-600 dark:text-rose-300 font-mono">
                     {area} sq. in
                   </span>
                 </div>
@@ -250,18 +250,18 @@ export default function Estimator({ onSelectEstimate }) {
 
         </div>
 
-        {/* First-Timer Pain Scale Guide (Directly Beneath) */}
-        <div className="mt-16 max-w-5xl mx-auto pt-12 border-t border-zinc-900">
+        {/* First-Timer Pain Scale Guide */}
+        <div className="mt-16 max-w-5xl mx-auto pt-12 border-t border-zinc-200 dark:border-zinc-900">
           <div className="flex items-center gap-2 mb-6">
             <Flame className="w-5 h-5 text-rose-500" />
-            <h3 className="text-xl font-bold text-white">First-Timer Tattoo Pain Scale Guide</h3>
+            <h3 className="text-xl font-bold text-zinc-900 dark:text-white">First-Timer Tattoo Pain Scale Guide</h3>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {painZones.map((zone, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl bg-zinc-900/60 border border-zinc-800/80 space-y-3"
+                className="p-5 rounded-2xl bg-white dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80 space-y-3 shadow-sm"
               >
                 <div className="flex items-center justify-between">
                   <span className={`px-2.5 py-1 rounded-full text-xs font-bold border ${zone.color} flex items-center gap-1.5`}>
@@ -271,11 +271,11 @@ export default function Estimator({ onSelectEstimate }) {
                 </div>
                 
                 <div>
-                  <h4 className="text-xs uppercase font-semibold text-zinc-400">Typical Placements:</h4>
-                  <p className="text-sm font-semibold text-zinc-100 mt-1">{zone.areas}</p>
+                  <h4 className="text-xs uppercase font-semibold text-zinc-500 dark:text-zinc-400">Typical Placements:</h4>
+                  <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mt-1">{zone.areas}</p>
                 </div>
 
-                <p className="text-xs text-zinc-400 leading-relaxed border-t border-zinc-800/60 pt-2">
+                <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed border-t border-zinc-100 dark:border-zinc-800/60 pt-2">
                   {zone.note}
                 </p>
               </div>
@@ -287,4 +287,3 @@ export default function Estimator({ onSelectEstimate }) {
     </section>
   )
 }
-
